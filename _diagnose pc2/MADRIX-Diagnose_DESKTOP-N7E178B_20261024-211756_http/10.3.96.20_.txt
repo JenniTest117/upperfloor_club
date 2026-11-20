@@ -1,0 +1,992 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>MADRIX NEBULA</title>
+<meta http-equiv="Content-type" content="text/html;charset=ISO-8859-1">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+
+<link rel="stylesheet" href="s.css">
+<script src="j.js"></script>
+</head>
+<body>
+<div align="center">
+
+<div><br><a target="_blank" href="http://www.madrix.com"><img alt="" src="logo.png"></a><br>
+<h1>NEBULA</h1>
+
+</div>
+
+<div>
+<center>
+<form method="get" name="refresh" action="">
+<input class="b" value=" Refresh " type="submit" title="Reloads The Settings From The Device">
+</form>
+</center>
+</div>
+
+<div>
+<form method="get" name="devicename" action="">
+<table>
+<tr><th colspan="2">Device</th></tr>
+<tr class="r2"><td>Name</td><td align="right"><input class="t" type="text" name="devicelongname" maxlength="64" value="MADRIX NEBULA" size="64"></td></tr>
+<tr class="r2"><td>Short Name (Art-Net)</td><td align="right"><input class="t" type="text" name="deviceshortname" maxlength="18" value="2. Floor" size="18"></td></tr>
+<tr class="r1"><td colspan="2" align="left"><input class="b" type="submit" value=" Set " title="Stores The Settings Above Permanently"></td></tr>
+</table>
+</form>
+</div>
+
+<div>
+<form method="get" name="deviceip" action="">
+<table>
+<tr><th colspan="2">Network Address</th></tr>
+<tr class="r2"><td>IP Address</td><td><input class="r" type="number" min="0" max="255" name="ip1" maxlength="3" value="10" size="3"> . <input class="r" type="number" min="0" max="255" name="ip2" maxlength="3" value="3" size="3"> . <input class="r" type="number" min="0" max="255" name="ip3" maxlength="3" value="96" size="3"> . <input class="r" type="number" min="0" max="255" name="ip4" maxlength="3" value="20" size="3"></td></tr>
+<tr class="r2"><td>Subnet Mask</td><td><input class="r" type="number" min="0" max="255" name="mask1" maxlength="3" value="255" size="3"> . <input class="r" type="number" min="0" max="255" name="mask2" maxlength="3" value="0" size="3"> . <input class="r" type="number" min="0" max="255" name="mask3" maxlength="3" value="0" size="3"> . <input class="r" type="number" min="0" max="255" name="mask4" maxlength="3" value="0" size="3"></td></tr>
+<tr class="r1"><td colspan="2" align="left"><input class="b" type="submit" value=" Set " title="Attention! Incorrect Parameters Can Make The Device Inaccessible"></td></tr>
+</table>
+</form>
+</div>
+
+<div>
+<form method="get" name="outputuni" action="">
+<table>
+<tr><th colspan="9">Network To SPI Output</th></tr>
+<tr class="r1"><td class="c1"><b>Port</b></td><td class="c1"><b>Universe Count</b></td><td class="c" colspan="6"><b>Assigned Network Universes</b></td><td class="c1"><b>FPS</b></td></tr>
+<tr class="r2">
+<td class="c1">All</td>
+<td class="c"><button type="button" class="b" title="sets the value of the first port for all ports" onclick="ValueCopy('uc',1,2);">&#x1F5D0;</button></td>
+<td class="c" colspan="4" title="automatically numbers all universes based on the first port"><button type="button" class="b" onclick="IncUni(1,12);">123···</button><button type="button" class="b" onclick="DecUni(1,12);">321···</button></td>
+<td class="c">&nbsp;</td>
+<td class="c">&nbsp;</td>
+<td class="c">&nbsp;</td>
+</tr>
+<tr class="r2">
+<td class="c1">1</td>
+<td class="c" title="enter a value from 1 to 6"><input class="r" type="number" min="1" max="6" name="ouc1" maxlength="1" value="4" size="1" id="uc1"></td>
+<td class="c" title="Art-Net: 0x0000 = 0/0/0"><input class="r" type="number" min="1" max="32768" id="ou1" name="o1u0" maxlength="5" value="1" size="5"></td>
+<td class="c" title="Art-Net: 0x0001 = 0/0/1"><input class="r" type="number" min="1" max="32768" id="ou2" name="o1u1" maxlength="5" value="2" size="5"></td>
+<td class="c" title="Art-Net: 0x0002 = 0/0/2"><input class="r" type="number" min="1" max="32768" id="ou3" name="o1u2" maxlength="5" value="3" size="5"></td>
+<td class="c" title="Art-Net: 0x0003 = 0/0/3"><input class="r" type="number" min="1" max="32768" id="ou4" name="o1u3" maxlength="5" value="4" size="5"></td>
+<td class="c" title="Art-Net: 0x0004 = 0/0/4"><input class="r" type="number" min="1" max="32768" id="ou5" name="o1u4" maxlength="5" value="5" disabled size="5"></td>
+<td class="c" title="Art-Net: 0x0005 = 0/0/5"><input class="r" type="number" min="1" max="32768" id="ou6" name="o1u5" maxlength="5" value="6" disabled size="5"></td>
+<td class="c" title="the frame rate that can be achieved with current settings">48.1</td>
+</tr>
+<tr class="r2">
+<td class="c1">2</td>
+<td class="c" title="enter a value from 1 to 6"><input class="r" type="number" min="1" max="6" name="ouc2" maxlength="1" value="4" size="1" id="uc2"></td>
+<td class="c" title="Art-Net: 0x0004 = 0/0/4"><input class="r" type="number" min="1" max="32768" id="ou7" name="o2u0" maxlength="5" value="5" size="5"></td>
+<td class="c" title="Art-Net: 0x0005 = 0/0/5"><input class="r" type="number" min="1" max="32768" id="ou8" name="o2u1" maxlength="5" value="6" size="5"></td>
+<td class="c" title="Art-Net: 0x0006 = 0/0/6"><input class="r" type="number" min="1" max="32768" id="ou9" name="o2u2" maxlength="5" value="7" size="5"></td>
+<td class="c" title="Art-Net: 0x0007 = 0/0/7"><input class="r" type="number" min="1" max="32768" id="ou10" name="o2u3" maxlength="5" value="8" size="5"></td>
+<td class="c" title="Art-Net: 0x000A = 0/0/10"><input class="r" type="number" min="1" max="32768" id="ou11" name="o2u4" maxlength="5" value="11" disabled size="5"></td>
+<td class="c" title="Art-Net: 0x000B = 0/0/11"><input class="r" type="number" min="1" max="32768" id="ou12" name="o2u5" maxlength="5" value="12" disabled size="5"></td>
+<td class="c" title="the frame rate that can be achieved with current settings">48.1</td>
+</tr>
+<tr><th colspan="9"></th></tr>
+<tr class="r2"><td colspan="7">Device Accepts Network Data From</td><td colspan="2"><select class="t" name="odas"><option selected value="1">Art-Net</option><option value="2">Streaming ACN</option><option value="3">Art-Net And sACN</option></select></td></tr>
+<tr class="r1"><td colspan="9" align="left"><input class="b" type="submit" value=" Set " title="Stores The Settings Above Permanently"></td></tr>
+</table>
+</form>
+</div>
+
+<div>
+<form method="get" name="outputcfg" action="">
+<table>
+<tr><th colspan="5">SPI Output Configuration</th></tr>
+<tr class="r1"><td class="c1"><b>Port</b></td><td class="c"><b>Output Protocol</b></td><td class="c" title="Maps Data To Different Position"><b>Channel<br>Offset</b></td><td class="c"><b>Channel<br>Order</b></td><td class="c"><b>Channels<br>Per Universe</b></td></tr>
+<tr class="r2" title="sets the value of the first port for all ports">
+<td class="c1">All</td>
+<td class="c"><button type="button" class="b" onclick="ValueCopy('d',1,2);">&#x1F5D0;</button></td>
+<td class="c"><button type="button" class="b" onclick="ValueCopy('o',1,2);">&#x1F5D0;</button></td>
+<td class="c"><button type="button" class="b" onclick="ValueCopy('co',1,2);">&#x1F5D0;</button></td>
+<td class="c"><button type="button" class="b" onclick="ValueCopy('c',1,2);">&#x1F5D0;</button></td>
+</tr>
+<tr class="r2">
+<td class="c1">1</td>
+<td class="c"><select class="t" id="d1" name="d1"><optgroup label="APA101&nbsp;">
+<option value="m17p7936">APA101, 24 MHz</option>
+<option value="m17p7937">APA101, 12 MHz</option>
+<option value="m17p7938">APA101, 8 MHz</option>
+<option value="m17p7941">APA101, 4 MHz</option>
+<option value="m17p7947">APA101, 2 MHz</option>
+<option value="m17p7959">APA101, 1 MHz</option>
+</optgroup>
+<optgroup label="APA102&nbsp;">
+<option value="m18p7936">APA102, 24 MHz</option>
+<option value="m18p7937">APA102, 12 MHz</option>
+<option value="m18p7938">APA102, 8 MHz</option>
+<option value="m18p7941">APA102, 4 MHz</option>
+<option value="m18p7947">APA102, 2 MHz</option>
+<option value="m18p7959">APA102, 1 MHz</option>
+</optgroup>
+<optgroup label="APA104&nbsp;">
+<option value="m10p1">APA104, 800 kHz</option>
+<option value="m10p0">APA104, 585 kHz</option>
+</optgroup>
+<optgroup label="APA106&nbsp;">
+<option value="m11p1">APA106, 585 kHz</option>
+<option value="m11p0">APA106, Deprecated</option>
+</optgroup>
+<optgroup label="FW1935&nbsp;">
+<option value="m70p0">FW1935, 800 kHz</option>
+</optgroup>
+<optgroup label="GS8206&nbsp;">
+<option value="m48p0">GS8206, 800 kHz</option>
+</optgroup>
+<optgroup label="GS8207&nbsp;">
+<option value="m42p0">GS8207, 800 kHz</option>
+</optgroup>
+<optgroup label="GS8208&nbsp;">
+<option value="m45p0">GS8208, 800 kHz</option>
+</optgroup>
+<optgroup label="GW6201&nbsp;">
+<option value="m24p0">GW6201, 800 kHz</option>
+</optgroup>
+<optgroup label="GW6205&nbsp;">
+<option value="m35p1">GW6205, 800 kHz</option>
+<option value="m35p0">GW6205, 400 kHz</option>
+</optgroup>
+<optgroup label="HD108 Quadratic&nbsp;">
+<option value="m79p7936">HD108, 24 MHz</option>
+<option value="m79p7937">HD108, 12 MHz</option>
+<option value="m79p7938">HD108, 8 MHz</option>
+<option value="m79p7941">HD108, 4 MHz</option>
+<option value="m79p7947">HD108, 2 MHz</option>
+<option value="m79p7959">HD108, 1 MHz</option>
+</optgroup>
+<optgroup label="HD108 16 Bit&nbsp;">
+<option value="m80p7936">HD108, 16 Bit, 24 MHz</option>
+<option value="m80p7937">HD108, 16 Bit, 12 MHz</option>
+<option value="m80p7938">HD108, 16 Bit, 8 MHz</option>
+<option value="m80p7941">HD108, 16 Bit, 4 MHz</option>
+<option value="m80p7947">HD108, 16 Bit, 2 MHz</option>
+<option value="m80p7959">HD108, 16 Bit, 1 MHz</option>
+</optgroup>
+<optgroup label="LB1908&nbsp;">
+<option value="m71p1">LB1908, 800 kHz</option>
+</optgroup>
+<optgroup label="LPD1882S&nbsp;">
+<option value="m36p1">LPD1882S, 1 MHz</option>
+</optgroup>
+<optgroup label="LPD6803&nbsp;">
+<option value="m9p1">LPD6803, 12 MHz</option>
+<option value="m9p2">LPD6803, 8 MHz</option>
+<option value="m9p5">LPD6803, 4 MHz</option>
+<option value="m9p11">LPD6803, 2 MHz</option>
+<option value="m9p23">LPD6803, 1 MHz</option>
+</optgroup>
+<optgroup label="LPD8806&nbsp;">
+<option value="m6p1">LPD8806, 12 MHz</option>
+<option value="m6p2">LPD8806, 8 MHz</option>
+<option value="m6p5">LPD8806, 4 MHz</option>
+<option value="m6p11">LPD8806, 2 MHz</option>
+<option value="m6p23">LPD8806, 1 MHz</option>
+</optgroup>
+<optgroup label="MBI6023&nbsp;">
+<option value="m78p0">MBI6023, 24 MHz</option>
+<option value="m78p1">MBI6023, 12 MHz</option>
+<option value="m78p2">MBI6023, 8 MHz</option>
+<option value="m78p5">MBI6023, 4 MHz</option>
+<option value="m78p11">MBI6023, 2 MHz</option>
+<option value="m78p23">MBI6023, 1 MHz</option>
+</optgroup>
+<optgroup label="MBI6024&nbsp;">
+<option value="m49p256">MBI6024, 24 MHz</option>
+<option value="m49p257">MBI6024, 12 MHz</option>
+<option value="m49p258">MBI6024, 8 MHz</option>
+<option value="m49p261">MBI6024, 4 MHz</option>
+<option value="m49p267">MBI6024, 2 MHz</option>
+<option value="m49p279">MBI6024, 1 MHz</option>
+</optgroup>
+<optgroup label="MBI6120&nbsp;">
+<option value="m29p295">MBI6120, 1.2 MHz</option>
+<option value="m29p315">MBI6120, 800 kHz</option>
+<option value="m29p375">MBI6120, 400 kHz</option>
+<option value="m29p2855">MBI6120, 1.2 MHz, Limit 66 %</option>
+<option value="m29p2875">MBI6120, 800 kHz, Limit 66 %</option>
+<option value="m29p2935">MBI6120, 400 kHz, Limit 66 %</option>
+<option value="m29p1319">MBI6120, 1.2 MHz, Limit 33 %</option>
+<option value="m29p1339">MBI6120, 800 kHz, Limit 33 %</option>
+<option value="m29p1399">MBI6120, 400 kHz, Limit 33 %</option>
+</optgroup>
+<optgroup label="MY9291&nbsp;">
+<option value="m44p2">MY9291,  16 Bit Quadratic</option>
+<option value="m44p3">MY9291,  8 Bit</option>
+<option value="m44p4">MY9291,  16 Bit</option>
+<option value="m44p0">MY9291, 16 Bit Quadratic, Reversed</option>
+<option value="m44p1">MY9291,  8 Bit Reversed</option>
+</optgroup>
+<optgroup label="P9883&nbsp;">
+<option value="m21p1">P9883, 800 kHz</option>
+</optgroup>
+<optgroup label="SJ1221&nbsp;">
+<option value="m38p15">SJ1221, 800 kHz, 100 %</option>
+<option value="m38p11">SJ1221, 800 kHz, 75 %</option>
+<option value="m38p7">SJ1221, 800 kHz, 50 %</option>
+<option value="m38p3">SJ1221, 800 kHz, 25 %</option>
+<option value="m38p0">SJ1221, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="SK6112&nbsp;">
+<option value="m51p0">SK6112, 800 kHz</option>
+</optgroup>
+<optgroup label="SK6805&nbsp;">
+<option value="m50p1">SK6805, 800 kHz</option>
+</optgroup>
+<optgroup label="SK6812&nbsp;">
+<option value="m23p1">SK6812, 800 kHz</option>
+</optgroup>
+<optgroup label="SK6813&nbsp;">
+<option value="m52p0">SK6813, 800 kHz</option>
+</optgroup>
+<optgroup label="SK6822&nbsp;">
+<option value="m22p1">SK6822, 800 kHz</option>
+</optgroup>
+<optgroup label="SK9816&nbsp;">
+<option value="m53p15">SK9816, 800 kHz, 100 %</option>
+<option value="m53p11">SK9816, 800 kHz, 75 %</option>
+<option value="m53p7">SK9816, 800 kHz, 50 %</option>
+<option value="m53p3">SK9816, 800 kHz, 25 %</option>
+<option value="m53p0">SK9816, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="SK9822&nbsp;">
+<option value="m54p7936">SK9822, 24 MHz</option>
+<option value="m54p7937">SK9822, 12 MHz</option>
+<option value="m54p7938">SK9822, 8 MHz</option>
+<option value="m54p7941">SK9822, 4 MHz</option>
+<option value="m54p7947">SK9822, 2 MHz</option>
+<option value="m54p7959">SK9822, 1 MHz</option>
+</optgroup>
+<optgroup label="SK9826&nbsp;">
+<option value="m55p7936">SK9826, 24 MHz</option>
+<option value="m55p7937">SK9826, 12 MHz</option>
+<option value="m55p7938">SK9826, 8 MHz</option>
+<option value="m55p7941">SK9826, 4 MHz</option>
+<option value="m55p7947">SK9826, 2 MHz</option>
+<option value="m55p7959">SK9826, 1 MHz</option>
+</optgroup>
+<optgroup label="SM16703&nbsp;">
+<option value="m12p0">SM16703, 800 kHz</option>
+</optgroup>
+<optgroup label="SM16704&nbsp;">
+<option value="m67p0">SM16704, 800 kHz</option>
+</optgroup>
+<optgroup label="SM16716&nbsp;">
+<option value="m20p0">SM16716, 24 MHz</option>
+<option value="m20p1">SM16716, 12 MHz</option>
+<option value="m20p2">SM16716, 8 MHz</option>
+<option value="m20p5">SM16716, 4 MHz</option>
+<option value="m20p11">SM16716, 2 MHz</option>
+<option value="m20p23">SM16716, 1 MHz</option>
+</optgroup>
+<optgroup label="TLC5973&nbsp;">
+<option value="m46p3">TLC5973, 3 MHz</option>
+<option value="m46p5">TLC5973, 2 MHz</option>
+<option value="m46p11">TLC5973, 1 MHz</option>
+<option value="m46p14">TLC5973, 800 kHz</option>
+<option value="m46p29">TLC5973, 400 kHz</option>
+</optgroup>
+<optgroup label="TLS3001&nbsp;">
+<option value="m19p11">TLS3001, 2 MHz, Linear</option>
+<option value="m19p23">TLS3001, 1 MHz, Linear</option>
+<option value="m19p29">TLS3001, 800 kHz, Linear</option>
+<option value="m19p59">TLS3001, 400 kHz, Linear</option>
+</optgroup>
+<optgroup label="TLS3001&nbsp;">
+<option value="m19p267">TLS3001, 2 MHz, Quadratic</option>
+<option value="m19p279">TLS3001, 1 MHz, Quadratic</option>
+<option value="m19p285">TLS3001, 800 kHz, Quadratic</option>
+<option value="m19p315">TLS3001, 400 kHz, Quadratic</option>
+</optgroup>
+<optgroup label="TLS3008&nbsp;">
+<option value="m7p23">TLS3008, 1 MHz</option>
+<option value="m7p29">TLS3008, 800 kHz</option>
+<option value="m7p59">TLS3008, 400 kHz</option>
+</optgroup>
+<optgroup label="TM1803&nbsp;">
+<option value="m63p2">TM1803, 500 kHz</option>
+</optgroup>
+<optgroup label="TM1804&nbsp;">
+<option value="m13p0">TM1804, 800 kHz</option>
+<option value="m13p1">TM1804, 400 kHz</option>
+</optgroup>
+<optgroup label="TM1809&nbsp;">
+<option value="m14p0">TM1809, 800 kHz</option>
+</optgroup>
+<optgroup label="TM1812&nbsp;">
+<option value="m15p0">TM1812, 800 kHz</option>
+</optgroup>
+<optgroup label="TM1814&nbsp;">
+<option value="m25p65535">TM1814, 800 kHz, 100 %</option>
+<option value="m25p48059">TM1814, 800 kHz, 75 %</option>
+<option value="m25p30583">TM1814, 800 kHz, 50 %</option>
+<option value="m25p13107">TM1814, 800 kHz, 25 %</option>
+<option value="m25p0">TM1814, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="TM1829&nbsp;">
+<option value="m8p65535">TM1829, 1.6 MHz, 100 %</option>
+<option value="m8p48623">TM1829, 1.6 MHz, 75 %</option>
+<option value="m8p31711">TM1829, 1.6 MHz, 50 %</option>
+<option value="m8p14799">TM1829, 1.6 MHz, 25 %</option>
+<option value="m8p1">TM1829, 1.6 MHz, MIN</option>
+<option value="m8p65534">TM1829, 800 kHz, 100 %</option>
+<option value="m8p48622">TM1829, 800 kHz, 75 %</option>
+<option value="m8p31710">TM1829, 800 kHz, 50 %</option>
+<option value="m8p14798">TM1829, 800 kHz, 25 %</option>
+<option value="m8p0">TM1829, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="TM1934&nbsp;">
+<option value="m72p0">TM1934, 800 kHz</option>
+</optgroup>
+<optgroup label="UCS512B3&nbsp;">
+<option value="m32p31">UCS512B3, 750 kHz</option>
+<option value="m32p47">UCS512B3, 500 kHz</option>
+<option value="m32p95">UCS512B3, 250 kHz</option>
+</optgroup>
+<optgroup label="UCS1903&nbsp;">
+<option value="m5p1">UCS1903, 800 kHz</option>
+<option value="m5p0">UCS1903, 400 kHz</option>
+</optgroup>
+<optgroup label="UCS2603&nbsp;">
+<option value="m61p4095">UCS2603, 800 kHz, 100 %</option>
+<option value="m61p3003">UCS2603, 800 kHz, 75 %</option>
+<option value="m61p1911">UCS2603, 800 kHz, 50 %</option>
+<option value="m61p819">UCS2603, 800 kHz, 25 %</option>
+<option value="m61p0">UCS2603, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="UCS2903&nbsp;">
+<option value="m43p1">UCS2903, 800 kHz</option>
+<option value="m43p0">UCS2903, 400 kHz</option>
+</optgroup>
+<optgroup label="UCS2904&nbsp;">
+<option value="m47p1">UCS2904, 800 kHz</option>
+</optgroup>
+<optgroup label="UCS2904B&nbsp;">
+<option value="m73p1">UCS2904B, 800 kHz</option>
+</optgroup>
+<optgroup label="UCS5603&nbsp;">
+<option value="m62p15">UCS5603, 800 kHz, 100 %</option>
+<option value="m62p11">UCS5603, 800 kHz, 75 %</option>
+<option value="m62p7">UCS5603, 800 kHz, 50 %</option>
+<option value="m62p3">UCS5603, 800 kHz, 25 %</option>
+<option value="m62p0">UCS5603, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="UCS5603A&nbsp;">
+<option value="m74p15">UCS5603A, 800 kHz, 100 %</option>
+<option value="m74p11">UCS5603A, 800 kHz, 75 %</option>
+<option value="m74p7">UCS5603A, 800 kHz, 50 %</option>
+<option value="m74p3">UCS5603A, 800 kHz, 25 %</option>
+<option value="m74p0">UCS5603A, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="UCS7604&nbsp;">
+<option value="m77p196623">UCS7604, 800 kHz, 100 %</option>
+<option value="m77p196619">UCS7604, 800 kHz, 75 %</option>
+<option value="m77p196615">UCS7604, 800 kHz, 50 %</option>
+<option value="m77p196611">UCS7604, 800 kHz, 25 %</option>
+<option value="m77p196608">UCS7604, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="UCS7604 - Double&nbsp;">
+<option value="m77p65551">UCS7604, Double, 800 kHz, 100 %</option>
+<option value="m77p65547">UCS7604, Double, 800 kHz, 75 %</option>
+<option value="m77p65543">UCS7604, Double, 800 kHz, 50 %</option>
+<option value="m77p65539">UCS7604, Double, 800 kHz, 25 %</option>
+<option value="m77p65536">UCS7604, Double, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="UCS7604 - Quad&nbsp;">
+<option value="m77p15">UCS7604, Quad, 800 kHz, 100 %</option>
+<option value="m77p11">UCS7604, Quad, 800 kHz, 75 %</option>
+<option value="m77p7">UCS7604, Quad, 800 kHz, 50 %</option>
+<option value="m77p3">UCS7604, Quad, 800 kHz, 25 %</option>
+<option value="m77p0">UCS7604, Quad, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="UCS7604 - 16 Bit&nbsp;">
+<option value="m77p458767">UCS7604, 16 Bit, 800 kHz, 100 %</option>
+<option value="m77p458763">UCS7604, 16 Bit, 800 kHz, 75 %</option>
+<option value="m77p458759">UCS7604, 16 Bit, 800 kHz, 50 %</option>
+<option value="m77p458755">UCS7604, 16 Bit, 800 kHz, 25 %</option>
+<option value="m77p458752">UCS7604, 16 Bit, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="UCS7604 - 16 Bit, Double&nbsp;">
+<option value="m77p327695">UCS7604, 16 Bit, Double, 800 kHz, 100 %</option>
+<option value="m77p327691">UCS7604, 16 Bit, Double, 800 kHz, 75 %</option>
+<option value="m77p327687">UCS7604, 16 Bit, Double, 800 kHz, 50 %</option>
+<option value="m77p327683">UCS7604, 16 Bit, Double, 800 kHz, 25 %</option>
+<option value="m77p327680">UCS7604, 16 Bit, Double, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="UCS7604 - 16 Bit, Quad&nbsp;">
+<option value="m77p262159">UCS7604, 16 Bit, Quad, 800 kHz, 100 %</option>
+<option value="m77p262155">UCS7604, 16 Bit, Quad, 800 kHz, 75 %</option>
+<option value="m77p262151">UCS7604, 16 Bit, Quad, 800 kHz, 50 %</option>
+<option value="m77p262147">UCS7604, 16 Bit, Quad, 800 kHz, 25 %</option>
+<option value="m77p262144">UCS7604, 16 Bit, Quad, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="UCS8903&nbsp;">
+<option value="m64p1">UCS8903, 800 kHz</option>
+<option value="m65p1">UCS8903, 800 kHz, 16 Bit Native</option>
+</optgroup>
+<optgroup label="UCS8904&nbsp;">
+<option value="m40p1">UCS8904, 800 kHz</option>
+<option value="m41p1">UCS8904, 800 kHz, 16 Bit Native</option>
+</optgroup>
+<optgroup label="UCS9812S&nbsp;">
+<option value="m39p15">UCS9812S, 1.1 MHz, 100 %</option>
+<option value="m39p11">UCS9812S, 1.1 MHz, 75 %</option>
+<option value="m39p7">UCS9812S, 1.1 MHz, 50 %</option>
+<option value="m39p3">UCS9812S, 1.1 MHz, 25 %</option>
+<option value="m39p0">UCS9812S, 1.1 MHz, MIN</option>
+</optgroup>
+<optgroup label="VS17822&nbsp;">
+<option value="m56p0">VS17822, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2801&nbsp;">
+<option value="m1p0">WS2801, 24 MHz</option>
+<option value="m1p1">WS2801, 12 MHz</option>
+<option value="m1p2">WS2801, 8 MHz</option>
+<option value="m1p5">WS2801, 4 MHz</option>
+<option value="m1p11">WS2801, 2 MHz</option>
+<option value="m1p23">WS2801, 1 MHz</option>
+</optgroup>
+<optgroup label="WS2803&nbsp;">
+<option value="m57p0">WS2803, 24 MHz</option>
+<option value="m57p1">WS2803, 12 MHz</option>
+<option value="m57p2">WS2803, 8 MHz</option>
+<option value="m57p5">WS2803, 4 MHz</option>
+<option value="m57p11">WS2803, 2 MHz</option>
+<option value="m57p23">WS2803, 1 MHz</option>
+</optgroup>
+<optgroup label="WS2803 Reversed&nbsp;">
+<option value="m16p0">WS2803, 24 MHz, Reversed</option>
+<option value="m16p1">WS2803, 12 MHz, Reversed</option>
+<option value="m16p2">WS2803, 8 MHz, Reversed</option>
+<option value="m16p5">WS2803, 4 MHz, Reversed</option>
+<option value="m16p11">WS2803, 2 MHz, Reversed</option>
+<option value="m16p23">WS2803, 1 MHz, Reversed</option>
+</optgroup>
+<optgroup label="WS2811&nbsp;">
+<option value="m2p1">WS2811, 800 kHz</option>
+<option value="m2p0">WS2811, 400 kHz</option>
+</optgroup>
+<optgroup label="WS2811F&nbsp;">
+<option value="m75p1">WS2811F, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2811M&nbsp;">
+<option value="m68p1">WS2811M, 800 kHz</option>
+<option value="m68p0">WS2811M, 400 kHz</option>
+</optgroup>
+<optgroup label="WS2811S&nbsp;">
+<option value="m34p0">WS2811S, 800 kHz</option>
+<option value="m34p1">WS2811S, 400 kHz</option>
+</optgroup>
+<optgroup label="WS2812&nbsp;">
+<option value="m3p0">WS2812, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2812B&nbsp;">
+<option value="m4p0">WS2812B, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2812C&nbsp;">
+<option value="m66p0">WS2812C, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2813&nbsp;">
+<option value="m26p0">WS2813, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2814&nbsp;">
+<option selected value="m60p0">WS2814, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2814F&nbsp;">
+<option value="m76p0">WS2814F, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2815&nbsp;">
+<option value="m37p0">WS2815, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2818&nbsp;">
+<option value="m27p0">WS2818, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2818M&nbsp;">
+<option value="m69p0">WS2818M, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2821&nbsp;">
+<option value="m58p31">WS2821, 750 kHz</option>
+<option value="m58p47">WS2821, 500 kHz</option>
+<option value="m58p95">WS2821, 250 kHz</option>
+<option value="m59p95">WS2821, Addressing</option>
+</optgroup>
+<optgroup label="WS2822S&nbsp;">
+<option value="m30p31">WS2822S, 750 kHz</option>
+<option value="m30p47">WS2822S, 500 kHz</option>
+<option value="m30p95">WS2822S, 250 kHz</option>
+<option value="m31p95">WS2822S, Addressing</option>
+</optgroup>
+</select></td>
+<td class="c"><input class="r" id="o1" type="number" min="-511" max="511" name="o1co" maxlength="4" value="0" size="4"></td>
+<td class="c"><select class="t" id="co1" name="co1"><option value="0">1-2-3-(4)</option><option value="5">1-3-2</option><option value="4">2-1-3</option><option value="3">2-3-1</option><option value="2">3-1-2</option><option value="1">3-2-1</option><option value="10">1-3-2-4</option><option value="9">2-1-3-4</option><option value="8">2-3-1-4</option><option value="7">3-1-2-4</option><option value="6">3-2-1-4</option><option selected value="16">4-1-2-3</option><option value="15">4-1-3-2</option><option value="14">4-2-1-3</option><option value="13">4-2-3-1</option><option value="12">4-3-1-2</option><option value="11">4-3-2-1</option></select></td>
+<td class="c"><select class="t" id="c1" name="c1"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option><option value="61">61</option><option value="62">62</option><option value="63">63</option><option value="64">64</option><option value="65">65</option><option value="66">66</option><option value="67">67</option><option value="68">68</option><option value="69">69</option><option value="70">70</option><option value="71">71</option><option value="72">72</option><option value="73">73</option><option value="74">74</option><option value="75">75</option><option value="76">76</option><option value="77">77</option><option value="78">78</option><option value="79">79</option><option value="80">80</option><option value="81">81</option><option value="82">82</option><option value="83">83</option><option value="84">84</option><option value="85">85</option><option value="86">86</option><option value="87">87</option><option value="88">88</option><option value="89">89</option><option value="90">90</option><option value="91">91</option><option value="92">92</option><option value="93">93</option><option value="94">94</option><option value="95">95</option><option value="96">96</option><option value="97">97</option><option value="98">98</option><option value="99">99</option><option value="100">100</option><option value="101">101</option><option value="102">102</option><option value="103">103</option><option value="104">104</option><option value="105">105</option><option value="106">106</option><option value="107">107</option><option value="108">108</option><option value="109">109</option><option value="110">110</option><option value="111">111</option><option value="112">112</option><option value="113">113</option><option value="114">114</option><option value="115">115</option><option value="116">116</option><option value="117">117</option><option value="118">118</option><option value="119">119</option><option value="120">120</option><option value="121">121</option><option value="122">122</option><option value="123">123</option><option value="124">124</option><option value="125">125</option><option value="126">126</option><option value="127">127</option><option value="128">128</option><option value="129">129</option><option value="130">130</option><option value="131">131</option><option value="132">132</option><option value="133">133</option><option value="134">134</option><option value="135">135</option><option value="136">136</option><option value="137">137</option><option value="138">138</option><option value="139">139</option><option value="140">140</option><option value="141">141</option><option value="142">142</option><option value="143">143</option><option value="144">144</option><option value="145">145</option><option value="146">146</option><option value="147">147</option><option value="148">148</option><option value="149">149</option><option value="150">150</option><option value="151">151</option><option value="152">152</option><option value="153">153</option><option value="154">154</option><option value="155">155</option><option value="156">156</option><option value="157">157</option><option value="158">158</option><option value="159">159</option><option value="160">160</option><option value="161">161</option><option value="162">162</option><option value="163">163</option><option value="164">164</option><option value="165">165</option><option value="166">166</option><option value="167">167</option><option value="168">168</option><option value="169">169</option><option value="170">170</option><option value="171">171</option><option value="172">172</option><option value="173">173</option><option value="174">174</option><option value="175">175</option><option value="176">176</option><option value="177">177</option><option value="178">178</option><option value="179">179</option><option value="180">180</option><option value="181">181</option><option value="182">182</option><option value="183">183</option><option value="184">184</option><option value="185">185</option><option value="186">186</option><option value="187">187</option><option value="188">188</option><option value="189">189</option><option value="190">190</option><option value="191">191</option><option value="192">192</option><option value="193">193</option><option value="194">194</option><option value="195">195</option><option value="196">196</option><option value="197">197</option><option value="198">198</option><option value="199">199</option><option value="200">200</option><option value="201">201</option><option value="202">202</option><option value="203">203</option><option value="204">204</option><option value="205">205</option><option value="206">206</option><option value="207">207</option><option value="208">208</option><option value="209">209</option><option value="210">210</option><option value="211">211</option><option value="212">212</option><option value="213">213</option><option value="214">214</option><option value="215">215</option><option value="216">216</option><option value="217">217</option><option value="218">218</option><option value="219">219</option><option value="220">220</option><option value="221">221</option><option value="222">222</option><option value="223">223</option><option value="224">224</option><option value="225">225</option><option value="226">226</option><option value="227">227</option><option value="228">228</option><option value="229">229</option><option value="230">230</option><option value="231">231</option><option value="232">232</option><option value="233">233</option><option value="234">234</option><option value="235">235</option><option value="236">236</option><option value="237">237</option><option value="238">238</option><option value="239">239</option><option value="240">240</option><option value="241">241</option><option value="242">242</option><option value="243">243</option><option value="244">244</option><option value="245">245</option><option value="246">246</option><option value="247">247</option><option value="248">248</option><option value="249">249</option><option value="250">250</option><option value="251">251</option><option value="252">252</option><option value="253">253</option><option value="254">254</option><option value="255">255</option><option value="256">256</option><option value="257">257</option><option value="258">258</option><option value="259">259</option><option value="260">260</option><option value="261">261</option><option value="262">262</option><option value="263">263</option><option value="264">264</option><option value="265">265</option><option value="266">266</option><option value="267">267</option><option value="268">268</option><option value="269">269</option><option value="270">270</option><option value="271">271</option><option value="272">272</option><option value="273">273</option><option value="274">274</option><option value="275">275</option><option value="276">276</option><option value="277">277</option><option value="278">278</option><option value="279">279</option><option value="280">280</option><option value="281">281</option><option value="282">282</option><option value="283">283</option><option value="284">284</option><option value="285">285</option><option value="286">286</option><option value="287">287</option><option value="288">288</option><option value="289">289</option><option value="290">290</option><option value="291">291</option><option value="292">292</option><option value="293">293</option><option value="294">294</option><option value="295">295</option><option value="296">296</option><option value="297">297</option><option value="298">298</option><option value="299">299</option><option value="300">300</option><option value="301">301</option><option value="302">302</option><option value="303">303</option><option value="304">304</option><option value="305">305</option><option value="306">306</option><option value="307">307</option><option value="308">308</option><option value="309">309</option><option value="310">310</option><option value="311">311</option><option value="312">312</option><option value="313">313</option><option value="314">314</option><option value="315">315</option><option value="316">316</option><option value="317">317</option><option value="318">318</option><option value="319">319</option><option value="320">320</option><option value="321">321</option><option value="322">322</option><option value="323">323</option><option value="324">324</option><option value="325">325</option><option value="326">326</option><option value="327">327</option><option value="328">328</option><option value="329">329</option><option value="330">330</option><option value="331">331</option><option value="332">332</option><option value="333">333</option><option value="334">334</option><option value="335">335</option><option value="336">336</option><option value="337">337</option><option value="338">338</option><option value="339">339</option><option value="340">340</option><option value="341">341</option><option value="342">342</option><option value="343">343</option><option value="344">344</option><option value="345">345</option><option value="346">346</option><option value="347">347</option><option value="348">348</option><option value="349">349</option><option value="350">350</option><option value="351">351</option><option value="352">352</option><option value="353">353</option><option value="354">354</option><option value="355">355</option><option value="356">356</option><option value="357">357</option><option value="358">358</option><option value="359">359</option><option value="360">360</option><option value="361">361</option><option value="362">362</option><option value="363">363</option><option value="364">364</option><option value="365">365</option><option value="366">366</option><option value="367">367</option><option value="368">368</option><option value="369">369</option><option value="370">370</option><option value="371">371</option><option value="372">372</option><option value="373">373</option><option value="374">374</option><option value="375">375</option><option value="376">376</option><option value="377">377</option><option value="378">378</option><option value="379">379</option><option value="380">380</option><option value="381">381</option><option value="382">382</option><option value="383">383</option><option value="384">384</option><option value="385">385</option><option value="386">386</option><option value="387">387</option><option value="388">388</option><option value="389">389</option><option value="390">390</option><option value="391">391</option><option value="392">392</option><option value="393">393</option><option value="394">394</option><option value="395">395</option><option value="396">396</option><option value="397">397</option><option value="398">398</option><option value="399">399</option><option value="400">400</option><option value="401">401</option><option value="402">402</option><option value="403">403</option><option value="404">404</option><option value="405">405</option><option value="406">406</option><option value="407">407</option><option value="408">408</option><option value="409">409</option><option value="410">410</option><option value="411">411</option><option value="412">412</option><option value="413">413</option><option value="414">414</option><option value="415">415</option><option value="416">416</option><option value="417">417</option><option value="418">418</option><option value="419">419</option><option value="420">420</option><option value="421">421</option><option value="422">422</option><option value="423">423</option><option value="424">424</option><option value="425">425</option><option value="426">426</option><option value="427">427</option><option value="428">428</option><option value="429">429</option><option value="430">430</option><option value="431">431</option><option value="432">432</option><option value="433">433</option><option value="434">434</option><option value="435">435</option><option value="436">436</option><option value="437">437</option><option value="438">438</option><option value="439">439</option><option value="440">440</option><option value="441">441</option><option value="442">442</option><option value="443">443</option><option value="444">444</option><option value="445">445</option><option value="446">446</option><option value="447">447</option><option value="448">448</option><option value="449">449</option><option value="450">450</option><option value="451">451</option><option value="452">452</option><option value="453">453</option><option value="454">454</option><option value="455">455</option><option value="456">456</option><option value="457">457</option><option value="458">458</option><option value="459">459</option><option value="460">460</option><option value="461">461</option><option value="462">462</option><option value="463">463</option><option value="464">464</option><option value="465">465</option><option value="466">466</option><option value="467">467</option><option value="468">468</option><option value="469">469</option><option value="470">470</option><option value="471">471</option><option value="472">472</option><option value="473">473</option><option value="474">474</option><option value="475">475</option><option value="476">476</option><option value="477">477</option><option value="478">478</option><option value="479">479</option><option value="480">480</option><option value="481">481</option><option value="482">482</option><option value="483">483</option><option value="484">484</option><option value="485">485</option><option value="486">486</option><option value="487">487</option><option value="488">488</option><option value="489">489</option><option value="490">490</option><option value="491">491</option><option value="492">492</option><option value="493">493</option><option value="494">494</option><option value="495">495</option><option value="496">496</option><option value="497">497</option><option value="498">498</option><option value="499">499</option><option value="500">500</option><option value="501">501</option><option value="502">502</option><option value="503">503</option><option value="504">504</option><option value="505">505</option><option value="506">506</option><option value="507">507</option><option value="508">508</option><option value="509">509</option><option value="510">510</option><option value="511">511</option><option value="512">512</option><option selected value="0">Automatic</option></select></td></tr>
+<tr class="r2">
+<td class="c1">2</td>
+<td class="c"><select class="t" id="d2" name="d2"><optgroup label="APA101&nbsp;">
+<option value="m17p7936">APA101, 24 MHz</option>
+<option value="m17p7937">APA101, 12 MHz</option>
+<option value="m17p7938">APA101, 8 MHz</option>
+<option value="m17p7941">APA101, 4 MHz</option>
+<option value="m17p7947">APA101, 2 MHz</option>
+<option value="m17p7959">APA101, 1 MHz</option>
+</optgroup>
+<optgroup label="APA102&nbsp;">
+<option value="m18p7936">APA102, 24 MHz</option>
+<option value="m18p7937">APA102, 12 MHz</option>
+<option value="m18p7938">APA102, 8 MHz</option>
+<option value="m18p7941">APA102, 4 MHz</option>
+<option value="m18p7947">APA102, 2 MHz</option>
+<option value="m18p7959">APA102, 1 MHz</option>
+</optgroup>
+<optgroup label="APA104&nbsp;">
+<option value="m10p1">APA104, 800 kHz</option>
+<option value="m10p0">APA104, 585 kHz</option>
+</optgroup>
+<optgroup label="APA106&nbsp;">
+<option value="m11p1">APA106, 585 kHz</option>
+<option value="m11p0">APA106, Deprecated</option>
+</optgroup>
+<optgroup label="FW1935&nbsp;">
+<option value="m70p0">FW1935, 800 kHz</option>
+</optgroup>
+<optgroup label="GS8206&nbsp;">
+<option value="m48p0">GS8206, 800 kHz</option>
+</optgroup>
+<optgroup label="GS8207&nbsp;">
+<option value="m42p0">GS8207, 800 kHz</option>
+</optgroup>
+<optgroup label="GS8208&nbsp;">
+<option value="m45p0">GS8208, 800 kHz</option>
+</optgroup>
+<optgroup label="GW6201&nbsp;">
+<option value="m24p0">GW6201, 800 kHz</option>
+</optgroup>
+<optgroup label="GW6205&nbsp;">
+<option value="m35p1">GW6205, 800 kHz</option>
+<option value="m35p0">GW6205, 400 kHz</option>
+</optgroup>
+<optgroup label="HD108 Quadratic&nbsp;">
+<option value="m79p7936">HD108, 24 MHz</option>
+<option value="m79p7937">HD108, 12 MHz</option>
+<option value="m79p7938">HD108, 8 MHz</option>
+<option value="m79p7941">HD108, 4 MHz</option>
+<option value="m79p7947">HD108, 2 MHz</option>
+<option value="m79p7959">HD108, 1 MHz</option>
+</optgroup>
+<optgroup label="HD108 16 Bit&nbsp;">
+<option value="m80p7936">HD108, 16 Bit, 24 MHz</option>
+<option value="m80p7937">HD108, 16 Bit, 12 MHz</option>
+<option value="m80p7938">HD108, 16 Bit, 8 MHz</option>
+<option value="m80p7941">HD108, 16 Bit, 4 MHz</option>
+<option value="m80p7947">HD108, 16 Bit, 2 MHz</option>
+<option value="m80p7959">HD108, 16 Bit, 1 MHz</option>
+</optgroup>
+<optgroup label="LB1908&nbsp;">
+<option value="m71p1">LB1908, 800 kHz</option>
+</optgroup>
+<optgroup label="LPD1882S&nbsp;">
+<option value="m36p1">LPD1882S, 1 MHz</option>
+</optgroup>
+<optgroup label="LPD6803&nbsp;">
+<option value="m9p1">LPD6803, 12 MHz</option>
+<option value="m9p2">LPD6803, 8 MHz</option>
+<option value="m9p5">LPD6803, 4 MHz</option>
+<option value="m9p11">LPD6803, 2 MHz</option>
+<option value="m9p23">LPD6803, 1 MHz</option>
+</optgroup>
+<optgroup label="LPD8806&nbsp;">
+<option value="m6p1">LPD8806, 12 MHz</option>
+<option value="m6p2">LPD8806, 8 MHz</option>
+<option value="m6p5">LPD8806, 4 MHz</option>
+<option value="m6p11">LPD8806, 2 MHz</option>
+<option value="m6p23">LPD8806, 1 MHz</option>
+</optgroup>
+<optgroup label="MBI6023&nbsp;">
+<option value="m78p0">MBI6023, 24 MHz</option>
+<option value="m78p1">MBI6023, 12 MHz</option>
+<option value="m78p2">MBI6023, 8 MHz</option>
+<option value="m78p5">MBI6023, 4 MHz</option>
+<option value="m78p11">MBI6023, 2 MHz</option>
+<option value="m78p23">MBI6023, 1 MHz</option>
+</optgroup>
+<optgroup label="MBI6024&nbsp;">
+<option value="m49p256">MBI6024, 24 MHz</option>
+<option value="m49p257">MBI6024, 12 MHz</option>
+<option value="m49p258">MBI6024, 8 MHz</option>
+<option value="m49p261">MBI6024, 4 MHz</option>
+<option value="m49p267">MBI6024, 2 MHz</option>
+<option value="m49p279">MBI6024, 1 MHz</option>
+</optgroup>
+<optgroup label="MBI6120&nbsp;">
+<option value="m29p295">MBI6120, 1.2 MHz</option>
+<option value="m29p315">MBI6120, 800 kHz</option>
+<option value="m29p375">MBI6120, 400 kHz</option>
+<option value="m29p2855">MBI6120, 1.2 MHz, Limit 66 %</option>
+<option value="m29p2875">MBI6120, 800 kHz, Limit 66 %</option>
+<option value="m29p2935">MBI6120, 400 kHz, Limit 66 %</option>
+<option value="m29p1319">MBI6120, 1.2 MHz, Limit 33 %</option>
+<option value="m29p1339">MBI6120, 800 kHz, Limit 33 %</option>
+<option value="m29p1399">MBI6120, 400 kHz, Limit 33 %</option>
+</optgroup>
+<optgroup label="MY9291&nbsp;">
+<option value="m44p2">MY9291,  16 Bit Quadratic</option>
+<option value="m44p3">MY9291,  8 Bit</option>
+<option value="m44p4">MY9291,  16 Bit</option>
+<option value="m44p0">MY9291, 16 Bit Quadratic, Reversed</option>
+<option value="m44p1">MY9291,  8 Bit Reversed</option>
+</optgroup>
+<optgroup label="P9883&nbsp;">
+<option value="m21p1">P9883, 800 kHz</option>
+</optgroup>
+<optgroup label="SJ1221&nbsp;">
+<option value="m38p15">SJ1221, 800 kHz, 100 %</option>
+<option value="m38p11">SJ1221, 800 kHz, 75 %</option>
+<option value="m38p7">SJ1221, 800 kHz, 50 %</option>
+<option value="m38p3">SJ1221, 800 kHz, 25 %</option>
+<option value="m38p0">SJ1221, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="SK6112&nbsp;">
+<option value="m51p0">SK6112, 800 kHz</option>
+</optgroup>
+<optgroup label="SK6805&nbsp;">
+<option value="m50p1">SK6805, 800 kHz</option>
+</optgroup>
+<optgroup label="SK6812&nbsp;">
+<option value="m23p1">SK6812, 800 kHz</option>
+</optgroup>
+<optgroup label="SK6813&nbsp;">
+<option value="m52p0">SK6813, 800 kHz</option>
+</optgroup>
+<optgroup label="SK6822&nbsp;">
+<option value="m22p1">SK6822, 800 kHz</option>
+</optgroup>
+<optgroup label="SK9816&nbsp;">
+<option value="m53p15">SK9816, 800 kHz, 100 %</option>
+<option value="m53p11">SK9816, 800 kHz, 75 %</option>
+<option value="m53p7">SK9816, 800 kHz, 50 %</option>
+<option value="m53p3">SK9816, 800 kHz, 25 %</option>
+<option value="m53p0">SK9816, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="SK9822&nbsp;">
+<option value="m54p7936">SK9822, 24 MHz</option>
+<option value="m54p7937">SK9822, 12 MHz</option>
+<option value="m54p7938">SK9822, 8 MHz</option>
+<option value="m54p7941">SK9822, 4 MHz</option>
+<option value="m54p7947">SK9822, 2 MHz</option>
+<option value="m54p7959">SK9822, 1 MHz</option>
+</optgroup>
+<optgroup label="SK9826&nbsp;">
+<option value="m55p7936">SK9826, 24 MHz</option>
+<option value="m55p7937">SK9826, 12 MHz</option>
+<option value="m55p7938">SK9826, 8 MHz</option>
+<option value="m55p7941">SK9826, 4 MHz</option>
+<option value="m55p7947">SK9826, 2 MHz</option>
+<option value="m55p7959">SK9826, 1 MHz</option>
+</optgroup>
+<optgroup label="SM16703&nbsp;">
+<option value="m12p0">SM16703, 800 kHz</option>
+</optgroup>
+<optgroup label="SM16704&nbsp;">
+<option value="m67p0">SM16704, 800 kHz</option>
+</optgroup>
+<optgroup label="SM16716&nbsp;">
+<option value="m20p0">SM16716, 24 MHz</option>
+<option value="m20p1">SM16716, 12 MHz</option>
+<option value="m20p2">SM16716, 8 MHz</option>
+<option value="m20p5">SM16716, 4 MHz</option>
+<option value="m20p11">SM16716, 2 MHz</option>
+<option value="m20p23">SM16716, 1 MHz</option>
+</optgroup>
+<optgroup label="TLC5973&nbsp;">
+<option value="m46p3">TLC5973, 3 MHz</option>
+<option value="m46p5">TLC5973, 2 MHz</option>
+<option value="m46p11">TLC5973, 1 MHz</option>
+<option value="m46p14">TLC5973, 800 kHz</option>
+<option value="m46p29">TLC5973, 400 kHz</option>
+</optgroup>
+<optgroup label="TLS3001&nbsp;">
+<option value="m19p11">TLS3001, 2 MHz, Linear</option>
+<option value="m19p23">TLS3001, 1 MHz, Linear</option>
+<option value="m19p29">TLS3001, 800 kHz, Linear</option>
+<option value="m19p59">TLS3001, 400 kHz, Linear</option>
+</optgroup>
+<optgroup label="TLS3001&nbsp;">
+<option value="m19p267">TLS3001, 2 MHz, Quadratic</option>
+<option value="m19p279">TLS3001, 1 MHz, Quadratic</option>
+<option value="m19p285">TLS3001, 800 kHz, Quadratic</option>
+<option value="m19p315">TLS3001, 400 kHz, Quadratic</option>
+</optgroup>
+<optgroup label="TLS3008&nbsp;">
+<option value="m7p23">TLS3008, 1 MHz</option>
+<option value="m7p29">TLS3008, 800 kHz</option>
+<option value="m7p59">TLS3008, 400 kHz</option>
+</optgroup>
+<optgroup label="TM1803&nbsp;">
+<option value="m63p2">TM1803, 500 kHz</option>
+</optgroup>
+<optgroup label="TM1804&nbsp;">
+<option value="m13p0">TM1804, 800 kHz</option>
+<option value="m13p1">TM1804, 400 kHz</option>
+</optgroup>
+<optgroup label="TM1809&nbsp;">
+<option value="m14p0">TM1809, 800 kHz</option>
+</optgroup>
+<optgroup label="TM1812&nbsp;">
+<option value="m15p0">TM1812, 800 kHz</option>
+</optgroup>
+<optgroup label="TM1814&nbsp;">
+<option value="m25p65535">TM1814, 800 kHz, 100 %</option>
+<option value="m25p48059">TM1814, 800 kHz, 75 %</option>
+<option value="m25p30583">TM1814, 800 kHz, 50 %</option>
+<option value="m25p13107">TM1814, 800 kHz, 25 %</option>
+<option value="m25p0">TM1814, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="TM1829&nbsp;">
+<option value="m8p65535">TM1829, 1.6 MHz, 100 %</option>
+<option value="m8p48623">TM1829, 1.6 MHz, 75 %</option>
+<option value="m8p31711">TM1829, 1.6 MHz, 50 %</option>
+<option value="m8p14799">TM1829, 1.6 MHz, 25 %</option>
+<option value="m8p1">TM1829, 1.6 MHz, MIN</option>
+<option value="m8p65534">TM1829, 800 kHz, 100 %</option>
+<option value="m8p48622">TM1829, 800 kHz, 75 %</option>
+<option value="m8p31710">TM1829, 800 kHz, 50 %</option>
+<option value="m8p14798">TM1829, 800 kHz, 25 %</option>
+<option value="m8p0">TM1829, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="TM1934&nbsp;">
+<option value="m72p0">TM1934, 800 kHz</option>
+</optgroup>
+<optgroup label="UCS512B3&nbsp;">
+<option value="m32p31">UCS512B3, 750 kHz</option>
+<option value="m32p47">UCS512B3, 500 kHz</option>
+<option value="m32p95">UCS512B3, 250 kHz</option>
+</optgroup>
+<optgroup label="UCS1903&nbsp;">
+<option value="m5p1">UCS1903, 800 kHz</option>
+<option value="m5p0">UCS1903, 400 kHz</option>
+</optgroup>
+<optgroup label="UCS2603&nbsp;">
+<option value="m61p4095">UCS2603, 800 kHz, 100 %</option>
+<option value="m61p3003">UCS2603, 800 kHz, 75 %</option>
+<option value="m61p1911">UCS2603, 800 kHz, 50 %</option>
+<option value="m61p819">UCS2603, 800 kHz, 25 %</option>
+<option value="m61p0">UCS2603, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="UCS2903&nbsp;">
+<option value="m43p1">UCS2903, 800 kHz</option>
+<option value="m43p0">UCS2903, 400 kHz</option>
+</optgroup>
+<optgroup label="UCS2904&nbsp;">
+<option value="m47p1">UCS2904, 800 kHz</option>
+</optgroup>
+<optgroup label="UCS2904B&nbsp;">
+<option value="m73p1">UCS2904B, 800 kHz</option>
+</optgroup>
+<optgroup label="UCS5603&nbsp;">
+<option value="m62p15">UCS5603, 800 kHz, 100 %</option>
+<option value="m62p11">UCS5603, 800 kHz, 75 %</option>
+<option value="m62p7">UCS5603, 800 kHz, 50 %</option>
+<option value="m62p3">UCS5603, 800 kHz, 25 %</option>
+<option value="m62p0">UCS5603, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="UCS5603A&nbsp;">
+<option value="m74p15">UCS5603A, 800 kHz, 100 %</option>
+<option value="m74p11">UCS5603A, 800 kHz, 75 %</option>
+<option value="m74p7">UCS5603A, 800 kHz, 50 %</option>
+<option value="m74p3">UCS5603A, 800 kHz, 25 %</option>
+<option value="m74p0">UCS5603A, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="UCS7604&nbsp;">
+<option value="m77p196623">UCS7604, 800 kHz, 100 %</option>
+<option value="m77p196619">UCS7604, 800 kHz, 75 %</option>
+<option value="m77p196615">UCS7604, 800 kHz, 50 %</option>
+<option value="m77p196611">UCS7604, 800 kHz, 25 %</option>
+<option value="m77p196608">UCS7604, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="UCS7604 - Double&nbsp;">
+<option value="m77p65551">UCS7604, Double, 800 kHz, 100 %</option>
+<option value="m77p65547">UCS7604, Double, 800 kHz, 75 %</option>
+<option value="m77p65543">UCS7604, Double, 800 kHz, 50 %</option>
+<option value="m77p65539">UCS7604, Double, 800 kHz, 25 %</option>
+<option value="m77p65536">UCS7604, Double, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="UCS7604 - Quad&nbsp;">
+<option value="m77p15">UCS7604, Quad, 800 kHz, 100 %</option>
+<option value="m77p11">UCS7604, Quad, 800 kHz, 75 %</option>
+<option value="m77p7">UCS7604, Quad, 800 kHz, 50 %</option>
+<option value="m77p3">UCS7604, Quad, 800 kHz, 25 %</option>
+<option value="m77p0">UCS7604, Quad, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="UCS7604 - 16 Bit&nbsp;">
+<option value="m77p458767">UCS7604, 16 Bit, 800 kHz, 100 %</option>
+<option value="m77p458763">UCS7604, 16 Bit, 800 kHz, 75 %</option>
+<option value="m77p458759">UCS7604, 16 Bit, 800 kHz, 50 %</option>
+<option value="m77p458755">UCS7604, 16 Bit, 800 kHz, 25 %</option>
+<option value="m77p458752">UCS7604, 16 Bit, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="UCS7604 - 16 Bit, Double&nbsp;">
+<option value="m77p327695">UCS7604, 16 Bit, Double, 800 kHz, 100 %</option>
+<option value="m77p327691">UCS7604, 16 Bit, Double, 800 kHz, 75 %</option>
+<option value="m77p327687">UCS7604, 16 Bit, Double, 800 kHz, 50 %</option>
+<option value="m77p327683">UCS7604, 16 Bit, Double, 800 kHz, 25 %</option>
+<option value="m77p327680">UCS7604, 16 Bit, Double, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="UCS7604 - 16 Bit, Quad&nbsp;">
+<option value="m77p262159">UCS7604, 16 Bit, Quad, 800 kHz, 100 %</option>
+<option value="m77p262155">UCS7604, 16 Bit, Quad, 800 kHz, 75 %</option>
+<option value="m77p262151">UCS7604, 16 Bit, Quad, 800 kHz, 50 %</option>
+<option value="m77p262147">UCS7604, 16 Bit, Quad, 800 kHz, 25 %</option>
+<option value="m77p262144">UCS7604, 16 Bit, Quad, 800 kHz, MIN</option>
+</optgroup>
+<optgroup label="UCS8903&nbsp;">
+<option value="m64p1">UCS8903, 800 kHz</option>
+<option value="m65p1">UCS8903, 800 kHz, 16 Bit Native</option>
+</optgroup>
+<optgroup label="UCS8904&nbsp;">
+<option value="m40p1">UCS8904, 800 kHz</option>
+<option value="m41p1">UCS8904, 800 kHz, 16 Bit Native</option>
+</optgroup>
+<optgroup label="UCS9812S&nbsp;">
+<option value="m39p15">UCS9812S, 1.1 MHz, 100 %</option>
+<option value="m39p11">UCS9812S, 1.1 MHz, 75 %</option>
+<option value="m39p7">UCS9812S, 1.1 MHz, 50 %</option>
+<option value="m39p3">UCS9812S, 1.1 MHz, 25 %</option>
+<option value="m39p0">UCS9812S, 1.1 MHz, MIN</option>
+</optgroup>
+<optgroup label="VS17822&nbsp;">
+<option value="m56p0">VS17822, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2801&nbsp;">
+<option value="m1p0">WS2801, 24 MHz</option>
+<option value="m1p1">WS2801, 12 MHz</option>
+<option value="m1p2">WS2801, 8 MHz</option>
+<option value="m1p5">WS2801, 4 MHz</option>
+<option value="m1p11">WS2801, 2 MHz</option>
+<option value="m1p23">WS2801, 1 MHz</option>
+</optgroup>
+<optgroup label="WS2803&nbsp;">
+<option value="m57p0">WS2803, 24 MHz</option>
+<option value="m57p1">WS2803, 12 MHz</option>
+<option value="m57p2">WS2803, 8 MHz</option>
+<option value="m57p5">WS2803, 4 MHz</option>
+<option value="m57p11">WS2803, 2 MHz</option>
+<option value="m57p23">WS2803, 1 MHz</option>
+</optgroup>
+<optgroup label="WS2803 Reversed&nbsp;">
+<option value="m16p0">WS2803, 24 MHz, Reversed</option>
+<option value="m16p1">WS2803, 12 MHz, Reversed</option>
+<option value="m16p2">WS2803, 8 MHz, Reversed</option>
+<option value="m16p5">WS2803, 4 MHz, Reversed</option>
+<option value="m16p11">WS2803, 2 MHz, Reversed</option>
+<option value="m16p23">WS2803, 1 MHz, Reversed</option>
+</optgroup>
+<optgroup label="WS2811&nbsp;">
+<option value="m2p1">WS2811, 800 kHz</option>
+<option value="m2p0">WS2811, 400 kHz</option>
+</optgroup>
+<optgroup label="WS2811F&nbsp;">
+<option value="m75p1">WS2811F, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2811M&nbsp;">
+<option value="m68p1">WS2811M, 800 kHz</option>
+<option value="m68p0">WS2811M, 400 kHz</option>
+</optgroup>
+<optgroup label="WS2811S&nbsp;">
+<option value="m34p0">WS2811S, 800 kHz</option>
+<option value="m34p1">WS2811S, 400 kHz</option>
+</optgroup>
+<optgroup label="WS2812&nbsp;">
+<option value="m3p0">WS2812, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2812B&nbsp;">
+<option value="m4p0">WS2812B, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2812C&nbsp;">
+<option value="m66p0">WS2812C, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2813&nbsp;">
+<option value="m26p0">WS2813, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2814&nbsp;">
+<option selected value="m60p0">WS2814, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2814F&nbsp;">
+<option value="m76p0">WS2814F, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2815&nbsp;">
+<option value="m37p0">WS2815, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2818&nbsp;">
+<option value="m27p0">WS2818, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2818M&nbsp;">
+<option value="m69p0">WS2818M, 800 kHz</option>
+</optgroup>
+<optgroup label="WS2821&nbsp;">
+<option value="m58p31">WS2821, 750 kHz</option>
+<option value="m58p47">WS2821, 500 kHz</option>
+<option value="m58p95">WS2821, 250 kHz</option>
+<option value="m59p95">WS2821, Addressing</option>
+</optgroup>
+<optgroup label="WS2822S&nbsp;">
+<option value="m30p31">WS2822S, 750 kHz</option>
+<option value="m30p47">WS2822S, 500 kHz</option>
+<option value="m30p95">WS2822S, 250 kHz</option>
+<option value="m31p95">WS2822S, Addressing</option>
+</optgroup>
+</select></td>
+<td class="c"><input class="r" id="o2" type="number" min="-511" max="511" name="o2co" maxlength="4" value="0" size="4"></td>
+<td class="c"><select class="t" id="co2" name="co2"><option value="0">1-2-3-(4)</option><option value="5">1-3-2</option><option value="4">2-1-3</option><option value="3">2-3-1</option><option value="2">3-1-2</option><option value="1">3-2-1</option><option value="10">1-3-2-4</option><option value="9">2-1-3-4</option><option value="8">2-3-1-4</option><option value="7">3-1-2-4</option><option value="6">3-2-1-4</option><option selected value="16">4-1-2-3</option><option value="15">4-1-3-2</option><option value="14">4-2-1-3</option><option value="13">4-2-3-1</option><option value="12">4-3-1-2</option><option value="11">4-3-2-1</option></select></td>
+<td class="c"><select class="t" id="c2" name="c2"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option><option value="61">61</option><option value="62">62</option><option value="63">63</option><option value="64">64</option><option value="65">65</option><option value="66">66</option><option value="67">67</option><option value="68">68</option><option value="69">69</option><option value="70">70</option><option value="71">71</option><option value="72">72</option><option value="73">73</option><option value="74">74</option><option value="75">75</option><option value="76">76</option><option value="77">77</option><option value="78">78</option><option value="79">79</option><option value="80">80</option><option value="81">81</option><option value="82">82</option><option value="83">83</option><option value="84">84</option><option value="85">85</option><option value="86">86</option><option value="87">87</option><option value="88">88</option><option value="89">89</option><option value="90">90</option><option value="91">91</option><option value="92">92</option><option value="93">93</option><option value="94">94</option><option value="95">95</option><option value="96">96</option><option value="97">97</option><option value="98">98</option><option value="99">99</option><option value="100">100</option><option value="101">101</option><option value="102">102</option><option value="103">103</option><option value="104">104</option><option value="105">105</option><option value="106">106</option><option value="107">107</option><option value="108">108</option><option value="109">109</option><option value="110">110</option><option value="111">111</option><option value="112">112</option><option value="113">113</option><option value="114">114</option><option value="115">115</option><option value="116">116</option><option value="117">117</option><option value="118">118</option><option value="119">119</option><option value="120">120</option><option value="121">121</option><option value="122">122</option><option value="123">123</option><option value="124">124</option><option value="125">125</option><option value="126">126</option><option value="127">127</option><option value="128">128</option><option value="129">129</option><option value="130">130</option><option value="131">131</option><option value="132">132</option><option value="133">133</option><option value="134">134</option><option value="135">135</option><option value="136">136</option><option value="137">137</option><option value="138">138</option><option value="139">139</option><option value="140">140</option><option value="141">141</option><option value="142">142</option><option value="143">143</option><option value="144">144</option><option value="145">145</option><option value="146">146</option><option value="147">147</option><option value="148">148</option><option value="149">149</option><option value="150">150</option><option value="151">151</option><option value="152">152</option><option value="153">153</option><option value="154">154</option><option value="155">155</option><option value="156">156</option><option value="157">157</option><option value="158">158</option><option value="159">159</option><option value="160">160</option><option value="161">161</option><option value="162">162</option><option value="163">163</option><option value="164">164</option><option value="165">165</option><option value="166">166</option><option value="167">167</option><option value="168">168</option><option value="169">169</option><option value="170">170</option><option value="171">171</option><option value="172">172</option><option value="173">173</option><option value="174">174</option><option value="175">175</option><option value="176">176</option><option value="177">177</option><option value="178">178</option><option value="179">179</option><option value="180">180</option><option value="181">181</option><option value="182">182</option><option value="183">183</option><option value="184">184</option><option value="185">185</option><option value="186">186</option><option value="187">187</option><option value="188">188</option><option value="189">189</option><option value="190">190</option><option value="191">191</option><option value="192">192</option><option value="193">193</option><option value="194">194</option><option value="195">195</option><option value="196">196</option><option value="197">197</option><option value="198">198</option><option value="199">199</option><option value="200">200</option><option value="201">201</option><option value="202">202</option><option value="203">203</option><option value="204">204</option><option value="205">205</option><option value="206">206</option><option value="207">207</option><option value="208">208</option><option value="209">209</option><option value="210">210</option><option value="211">211</option><option value="212">212</option><option value="213">213</option><option value="214">214</option><option value="215">215</option><option value="216">216</option><option value="217">217</option><option value="218">218</option><option value="219">219</option><option value="220">220</option><option value="221">221</option><option value="222">222</option><option value="223">223</option><option value="224">224</option><option value="225">225</option><option value="226">226</option><option value="227">227</option><option value="228">228</option><option value="229">229</option><option value="230">230</option><option value="231">231</option><option value="232">232</option><option value="233">233</option><option value="234">234</option><option value="235">235</option><option value="236">236</option><option value="237">237</option><option value="238">238</option><option value="239">239</option><option value="240">240</option><option value="241">241</option><option value="242">242</option><option value="243">243</option><option value="244">244</option><option value="245">245</option><option value="246">246</option><option value="247">247</option><option value="248">248</option><option value="249">249</option><option value="250">250</option><option value="251">251</option><option value="252">252</option><option value="253">253</option><option value="254">254</option><option value="255">255</option><option value="256">256</option><option value="257">257</option><option value="258">258</option><option value="259">259</option><option value="260">260</option><option value="261">261</option><option value="262">262</option><option value="263">263</option><option value="264">264</option><option value="265">265</option><option value="266">266</option><option value="267">267</option><option value="268">268</option><option value="269">269</option><option value="270">270</option><option value="271">271</option><option value="272">272</option><option value="273">273</option><option value="274">274</option><option value="275">275</option><option value="276">276</option><option value="277">277</option><option value="278">278</option><option value="279">279</option><option value="280">280</option><option value="281">281</option><option value="282">282</option><option value="283">283</option><option value="284">284</option><option value="285">285</option><option value="286">286</option><option value="287">287</option><option value="288">288</option><option value="289">289</option><option value="290">290</option><option value="291">291</option><option value="292">292</option><option value="293">293</option><option value="294">294</option><option value="295">295</option><option value="296">296</option><option value="297">297</option><option value="298">298</option><option value="299">299</option><option value="300">300</option><option value="301">301</option><option value="302">302</option><option value="303">303</option><option value="304">304</option><option value="305">305</option><option value="306">306</option><option value="307">307</option><option value="308">308</option><option value="309">309</option><option value="310">310</option><option value="311">311</option><option value="312">312</option><option value="313">313</option><option value="314">314</option><option value="315">315</option><option value="316">316</option><option value="317">317</option><option value="318">318</option><option value="319">319</option><option value="320">320</option><option value="321">321</option><option value="322">322</option><option value="323">323</option><option value="324">324</option><option value="325">325</option><option value="326">326</option><option value="327">327</option><option value="328">328</option><option value="329">329</option><option value="330">330</option><option value="331">331</option><option value="332">332</option><option value="333">333</option><option value="334">334</option><option value="335">335</option><option value="336">336</option><option value="337">337</option><option value="338">338</option><option value="339">339</option><option value="340">340</option><option value="341">341</option><option value="342">342</option><option value="343">343</option><option value="344">344</option><option value="345">345</option><option value="346">346</option><option value="347">347</option><option value="348">348</option><option value="349">349</option><option value="350">350</option><option value="351">351</option><option value="352">352</option><option value="353">353</option><option value="354">354</option><option value="355">355</option><option value="356">356</option><option value="357">357</option><option value="358">358</option><option value="359">359</option><option value="360">360</option><option value="361">361</option><option value="362">362</option><option value="363">363</option><option value="364">364</option><option value="365">365</option><option value="366">366</option><option value="367">367</option><option value="368">368</option><option value="369">369</option><option value="370">370</option><option value="371">371</option><option value="372">372</option><option value="373">373</option><option value="374">374</option><option value="375">375</option><option value="376">376</option><option value="377">377</option><option value="378">378</option><option value="379">379</option><option value="380">380</option><option value="381">381</option><option value="382">382</option><option value="383">383</option><option value="384">384</option><option value="385">385</option><option value="386">386</option><option value="387">387</option><option value="388">388</option><option value="389">389</option><option value="390">390</option><option value="391">391</option><option value="392">392</option><option value="393">393</option><option value="394">394</option><option value="395">395</option><option value="396">396</option><option value="397">397</option><option value="398">398</option><option value="399">399</option><option value="400">400</option><option value="401">401</option><option value="402">402</option><option value="403">403</option><option value="404">404</option><option value="405">405</option><option value="406">406</option><option value="407">407</option><option value="408">408</option><option value="409">409</option><option value="410">410</option><option value="411">411</option><option value="412">412</option><option value="413">413</option><option value="414">414</option><option value="415">415</option><option value="416">416</option><option value="417">417</option><option value="418">418</option><option value="419">419</option><option value="420">420</option><option value="421">421</option><option value="422">422</option><option value="423">423</option><option value="424">424</option><option value="425">425</option><option value="426">426</option><option value="427">427</option><option value="428">428</option><option value="429">429</option><option value="430">430</option><option value="431">431</option><option value="432">432</option><option value="433">433</option><option value="434">434</option><option value="435">435</option><option value="436">436</option><option value="437">437</option><option value="438">438</option><option value="439">439</option><option value="440">440</option><option value="441">441</option><option value="442">442</option><option value="443">443</option><option value="444">444</option><option value="445">445</option><option value="446">446</option><option value="447">447</option><option value="448">448</option><option value="449">449</option><option value="450">450</option><option value="451">451</option><option value="452">452</option><option value="453">453</option><option value="454">454</option><option value="455">455</option><option value="456">456</option><option value="457">457</option><option value="458">458</option><option value="459">459</option><option value="460">460</option><option value="461">461</option><option value="462">462</option><option value="463">463</option><option value="464">464</option><option value="465">465</option><option value="466">466</option><option value="467">467</option><option value="468">468</option><option value="469">469</option><option value="470">470</option><option value="471">471</option><option value="472">472</option><option value="473">473</option><option value="474">474</option><option value="475">475</option><option value="476">476</option><option value="477">477</option><option value="478">478</option><option value="479">479</option><option value="480">480</option><option value="481">481</option><option value="482">482</option><option value="483">483</option><option value="484">484</option><option value="485">485</option><option value="486">486</option><option value="487">487</option><option value="488">488</option><option value="489">489</option><option value="490">490</option><option value="491">491</option><option value="492">492</option><option value="493">493</option><option value="494">494</option><option value="495">495</option><option value="496">496</option><option value="497">497</option><option value="498">498</option><option value="499">499</option><option value="500">500</option><option value="501">501</option><option value="502">502</option><option value="503">503</option><option value="504">504</option><option value="505">505</option><option value="506">506</option><option value="507">507</option><option value="508">508</option><option value="509">509</option><option value="510">510</option><option value="511">511</option><option value="512">512</option><option selected value="0">Automatic</option></select></td></tr>
+</table>
+
+<table>
+<tr><th colspan="2"></th></tr>
+<tr class="r2"><td>Output Intensity</td><td><input class="r" type="number" min="1" max="100" name="imv" maxlength="3" value="100" size="3">&percnt;</td></tr>
+<tr class="r2"><td>Upper Intensity Limit</td><td><input class="r" type="number" min="1" max="100" name="imc" maxlength="3" value="100" size="3">&percnt;</td></tr>
+<tr class="r2"><td title="On Each Affected Port">In Case Of Missing Network Data</td><td><select class="t" name="oadl"><option selected value="0">Send The Last Received Frame Continually</option><option value="1">Send Black Frames Continually</option><option value="228">Send White Frames Continually</option><option value="3">Stop Sending After Sending A Black Frame</option><option value="2">Stop Sending</option></select></td></tr>
+<tr class="r1"><td colspan="2" align="left"><input class="b" type="submit" value=" Set " title="Stores The Settings Above Permanently"></td></tr>
+</table>
+</form>
+</div>
+
+<div>
+<form method="get" name="outputuni" action="">
+<table>
+<tr><th colspan="2">RDM</th></tr>
+<tr class="r2"><td>ArtRdm (Act As RDM Responder)</td><td title="disables or enables ArtRdm to be able to reply to RDM requests over Art-Net"><input type="hidden" name="rChg" value="1"><input type="checkbox" name="rdm1" checked></td></tr>
+<tr class="r1"><td colspan="2" align="left"><input class="b" type="submit" value=" Set " title="Stores The Settings Above Permanently"></td></tr>
+</table>
+</form>
+</div>
+
+<div>
+<table>
+<tr><th colspan="2">Special Commands</th></tr>
+<tr class="r2"><td align="left">Reboot System</td><td align="right"><form method="get" name="reboot" action="reboot.shtml"><input class="b" type="submit" value=" Reboot "></form></td></tr>
+<tr class="r2"><td align="left">Reset To Factory Default Settings</td><td align="right"><form method="get" name="reset" action="reset.shtml"><input class="b" type="submit" value=" Reset "></form></td></tr>
+</table>
+</div>
+
+<div>
+<table>
+<tr><th colspan="2">Device Information</th></tr>
+<tr class="r2"><td>Model</td><td>MADRIX NEBULA</td></tr>
+<tr class="r2"><td>IP Address</td><td><a href="http://10.3.96.20">10.3.96.20</a></td></tr>
+<tr class="r2"><td>NetBIOS</td><td><a href="http://NEBULA024426/">http://NEBULA024426/</a></td></tr>
+<tr class="r2"><td>MAC Address</td><td>CC:D3:1E:80:9F:6A</td></tr>
+<tr class="r2"><td>Serial Number</td><td>NEBULA024426</td></tr>
+<tr class="r2"><td>Firmware</td><td>6.11.0883 (Jan 14 2026 13:23:58) [8c86bcec]</td></tr>
+<tr class="r2"><td>Bootloader</td><td>5.0.7418 (Apr 18 2023 14:46:03)</td></tr>
+<tr class="r2"><td>Hardware</td><td>1.4</td></tr>
+<tr class="r2"><td>External Voltages</td><td>Power: 23.7 V / Port 1 (V+): 23.4 V / Port 2 (V+): 23.3 V</td></tr>
+<tr class="r2"><td>System Temperature</td><td>40.2 &deg;C / 104.4 &deg;F</td></tr>
+<tr class="r2"><td>Ethernet</td><td>Left Port: 100 MBit/s Full-Duplex<br>Right Port: 100 MBit/s Full-Duplex</td></tr>
+<tr class="r2"><td>Uptime</td><td>03:05:56</td></tr>
+</table>
+<br>
+</div>
+
+<div>For more information visit <a target="_blank" href="http://www.madrix.com">www.madrix.com</a><br><br></div>
+</div>
+</body>
+</html>
