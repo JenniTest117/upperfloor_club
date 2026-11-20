@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <madrix_device_settings_dmx version="0x05000000" product_version="0x05070996">
 	<product>MADRIX v5.7i - 64 Bit (v5.7.9.150) compiled Nov 18 2025 - (c)inoage GmbH</product>
-	<save_date>2026/11/19 18:36:22</save_date>
-	<authentication_list version="0x05000000" info="149 entries">
+	<save_date>2026/10/24 20:44:58</save_date>
+	<authentication_list version="0x05000000" info="145 entries">
 		<authentication_code version="0x05000000" value_base64="+/iiml89Is5KM2LV/X40fjSQZMH5r3rUeVtzA+Azvds="/>
 		<authentication_code version="0x05000000" value_base64="+0iHrs/Jop0R9JFuutvtgfpwvRvvkAVnwnMvrS0+RCY="/>
 		<authentication_code version="0x05000000" value_base64="+E/R4RI0sVwoy4mwlNXhhcCW71uCQDot9V0jWp0WJYQ="/>
 		<authentication_code version="0x05000000" value_base64="+sx3DTjFeu31GB89iqRQ1toedtQmUsIDUviLoVO0uGI="/>
-		<authentication_code version="0x05000000" value_base64="/8/5QzNHIc1+AFZAr+qKVlTZeay3sCBW0HcZCc0iXJ4="/>
 		<authentication_code version="0x05000000" value_base64="00HhcUwUi3GVhBcwFa4ePhXNPNhT4MLZINsn5esw4/8="/>
 		<authentication_code version="0x05000000" value_base64="0IwjBGoVnVSg37YCpLZjr1rtgz3sED+rV65fz8cz2nM="/>
 		<authentication_code version="0x05000000" value_base64="1I7OJpHu8WEd1HvT4vKx8BfMVN7CI9YcMvW/QU37pKw="/>
@@ -81,7 +80,6 @@
 		<authentication_code version="0x05000000" value_base64="SSYN401jYmoJWWfPHc5X3Pc5p4k1Gp+Ui/Ap2ZBqAmI="/>
 		<authentication_code version="0x05000000" value_base64="Tr3aDuCWxsCDCTeQLP7G7+xgjRKJwamVMrjpntuUioA="/>
 		<authentication_code version="0x05000000" value_base64="Uhw8MX1cKHFyG07gC8k1F9kk34h1rFSqoKxVo/u4NAs="/>
-		<authentication_code version="0x05000000" value_base64="V/PpNOXAfGmgZ4EjshvHEfL+mKiuZESU3tSK6jynaJs="/>
 		<authentication_code version="0x05000000" value_base64="V27a2jOf11Xhcwa7cxZ3pQ6cMrzWDCUYgRqD2gQeOYA="/>
 		<authentication_code version="0x05000000" value_base64="VYWi/1nveYPVtqCXAnMOVU744/uKfZ7/oQbBjs2Ncjc="/>
 		<authentication_code version="0x05000000" value_base64="Vv06i6xhZkdSJ6qhxG4nsUkr+HHNluSAdRcWfDanaNY="/>
@@ -99,12 +97,10 @@
 		<authentication_code version="0x05000000" value_base64="aR8sv5yEHlbQQKwg0uqbilCwKAm4V5lXbyJdWpwRtE8="/>
 		<authentication_code version="0x05000000" value_base64="cygIVvRKB+vnFRjCOlvEEwY8CiLGklfTIFZ2YRPKHp8="/>
 		<authentication_code version="0x05000000" value_base64="dqCd0ct7m6RujbBMeReM2fPtxGiVIM3pNTBpZ/K4Djs="/>
-		<authentication_code version="0x05000000" value_base64="eLZrjhN5THUyH4xdLda72osrWMplx92rEzVhx6vE2II="/>
 		<authentication_code version="0x05000000" value_base64="eQOjVk8rg9lkPcHU+gRzvgX5F85ihztiSFaAf/D0TNM="/>
 		<authentication_code version="0x05000000" value_base64="emzWtXnxCzQ0/J5SP/N/zdH5Qen8XWtm2l0HqtF9DGU="/>
 		<authentication_code version="0x05000000" value_base64="fjodgNwwocasge1SuhfoKZ0IZI96M6dskCHYS5mIJPs="/>
 		<authentication_code version="0x05000000" value_base64="gDacGwLmj9tlBcN+UxDKqdzrrqD+ytVGdWOY1MkPQJg="/>
-		<authentication_code version="0x05000000" value_base64="gd6dqT6w7WVEBrtTxW3cHDQQ83SRch29iI8G9D4R5Eo="/>
 		<authentication_code version="0x05000000" value_base64="gkY8/3YK8gcnSWnP8ka3cYwhuxWTwQO3rxhlXwUf4Ns="/>
 		<authentication_code version="0x05000000" value_base64="gv+vLeQlUbmXwQr/5kzgUQrOel6S7fbTf5v9kYcRJ/E="/>
 		<authentication_code version="0x05000000" value_base64="hJZfugwGl+wjjGbygsWMBNZeEz5oPwek5mlmQijOCnY="/>
@@ -8815,7 +8811,7 @@
 				<artnet_full_frames_2 value="0"/>
 				<artnet_full_frames_3 value="0"/>
 				<artnet_full_frames_4 value="0"/>
-				<artnet_bind_ip value="10.3.96.14"/>
+				<artnet_bind_ip value="10.0.0.0"/>
 				<artnet_ac_led_mode value="2"/>
 			</settings_artnet>
 		</dmx_device>
@@ -8891,7 +8887,7 @@
 				<artnet_full_frames_2 value="0"/>
 				<artnet_full_frames_3 value="0"/>
 				<artnet_full_frames_4 value="0"/>
-				<artnet_bind_ip value="10.3.96.14"/>
+				<artnet_bind_ip value="10.0.0.0"/>
 				<artnet_ac_led_mode value="2"/>
 			</settings_artnet>
 		</dmx_device>
@@ -8967,7 +8963,7 @@
 				<artnet_full_frames_2 value="0"/>
 				<artnet_full_frames_3 value="0"/>
 				<artnet_full_frames_4 value="0"/>
-				<artnet_bind_ip value="10.3.96.14"/>
+				<artnet_bind_ip value="10.0.0.0"/>
 				<artnet_ac_led_mode value="2"/>
 			</settings_artnet>
 		</dmx_device>
@@ -9043,7 +9039,7 @@
 				<artnet_full_frames_2 value="0"/>
 				<artnet_full_frames_3 value="0"/>
 				<artnet_full_frames_4 value="0"/>
-				<artnet_bind_ip value="10.3.96.14"/>
+				<artnet_bind_ip value="10.0.0.0"/>
 				<artnet_ac_led_mode value="2"/>
 			</settings_artnet>
 		</dmx_device>
@@ -9119,7 +9115,7 @@
 				<artnet_full_frames_2 value="0"/>
 				<artnet_full_frames_3 value="0"/>
 				<artnet_full_frames_4 value="0"/>
-				<artnet_bind_ip value="10.3.96.14"/>
+				<artnet_bind_ip value="10.0.0.0"/>
 				<artnet_ac_led_mode value="2"/>
 			</settings_artnet>
 		</dmx_device>
@@ -9195,7 +9191,7 @@
 				<artnet_full_frames_2 value="0"/>
 				<artnet_full_frames_3 value="0"/>
 				<artnet_full_frames_4 value="0"/>
-				<artnet_bind_ip value="10.3.96.14"/>
+				<artnet_bind_ip value="10.0.0.0"/>
 				<artnet_ac_led_mode value="2"/>
 			</settings_artnet>
 		</dmx_device>
@@ -9271,7 +9267,7 @@
 				<artnet_full_frames_2 value="0"/>
 				<artnet_full_frames_3 value="0"/>
 				<artnet_full_frames_4 value="0"/>
-				<artnet_bind_ip value="10.3.96.14"/>
+				<artnet_bind_ip value="10.0.0.0"/>
 				<artnet_ac_led_mode value="2"/>
 			</settings_artnet>
 		</dmx_device>
@@ -9347,7 +9343,7 @@
 				<artnet_full_frames_2 value="0"/>
 				<artnet_full_frames_3 value="0"/>
 				<artnet_full_frames_4 value="0"/>
-				<artnet_bind_ip value="10.3.96.14"/>
+				<artnet_bind_ip value="10.0.0.0"/>
 				<artnet_ac_led_mode value="2"/>
 			</settings_artnet>
 		</dmx_device>
